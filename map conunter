@@ -1,0 +1,46 @@
+#define done cout<<"Successful\n";
+#define stop getchar();
+#define input(data,n) for(int xd=0;xd<n;xd++)cin>>data[xd];
+#define output(data) for(auto x: data){cout<<x<<sp;}
+#define print(x) cout<< #x <<" = "<< x<<"\n";
+#include <iostream>     // std::cout, std::fixed
+#include <iomanip>      // std::setprecisio
+#include <bits/stdc++.h>
+using namespace std;
+#define booster ios_base::sync_with_stdio(false);cin.tie(nullptr); cout.tie(nullptr);
+#define lli long long int
+#define spc " ";
+#define nl '\n'
+
+void solve(){
+    int n;
+    cin>>n;
+        map<string, int> mp;
+        for(int k=0; k<n; k++){
+            string strg;
+            cin>>strg;
+            if(mp.find(strg)!=mp.end()){
+                mp[strg]++;
+            }
+            else {
+                mp.insert({strg,1});
+            }
+        }
+
+        string maxx="";
+        int maxxx=0;
+        for (auto i : mp)
+       {
+           if(i.second>maxxx){
+            maxxx=max(maxxx,(i.second));
+            maxx=i.first;
+
+//        cout<<i.first<<" "<<i.second<<nl;
+       }}
+       cout<<maxx<<nl;
+}
+int main(){
+    booster;
+    solve();
+    return 0;
+}
